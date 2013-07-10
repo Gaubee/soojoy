@@ -1,0 +1,25 @@
+{
+  "name": "soojoy",
+  "version": "0.2.0",
+  "description": "基于ECShop的电子商务网站静态展示页面",
+  "main": "avalon.js",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "v0.6.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mvvm"
+  ],
+  "author": "Gaubee",
+  "license": "MIT"
+}

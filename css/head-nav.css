@@ -1,0 +1,83 @@
+#head{
+    height: 26px;
+    background-color: #eeeeee;
+    color: #666;
+}
+#head .user-control-center{
+    display: block;
+    float: right;
+    list-style: none;
+    font-size: 12px;
+    margin: 0px;
+}
+#head .user-control-center .item{
+    display: block;
+    float: left;
+    padding: 0px 10px;
+    line-height: 200%;
+}
+#head .item a{
+    color: #666;
+    text-decoration: none;
+}
+#head .item a:hover{
+    text-decoration:underline;
+}
+
+
+#nav{
+    height: 116px;
+    background-color: #d94a4a;
+    line-height: 200%;
+}
+#nav .logo{
+    display: block;
+    height: 81px;
+}
+#nav .nav-sort-title{
+    color: #fff;
+    background-color: #776766;
+    font-size: 16px;
+    font-family: "Microsoft Yahei",simsun;
+    display: block;
+    float: left;
+    height: 35px;
+    text-align: center;
+}
+#nav .nav-pages{
+    height: 35px;
+    margin: 0px;
+    line-height: 200%;
+    color: #fff;
+    font-family: "Microsoft Yahei",simsun;
+    display: block;
+    float: left;
+    padding-left: 70px;
+    list-style: none;
+    overflow: hidden;
+}
+#nav .nav-pages .item{
+    height: 100%;
+    padding: 0px 20px;
+    display: block;
+    float: left;
+    font-size: 14px;
+}
+#nav .nav-pages .item a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #FFF;
+}
+#nav .nav-pages .item.active{
+    font-size: 16px;
+    background-color: #932626;
+}
+#nav .nav-pages .item.hover{
+    background-color: #932626;
+}
+
+#search{
+    float: right;
+}
