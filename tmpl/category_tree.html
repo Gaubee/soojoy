@@ -5,7 +5,7 @@
 
 <ul ms-controller="category_tree" id="category_tree" class="shopNav left-small" ms-each-item="datas">
     <li class="navItem">
-        <a href="{$cat.url}" class="navTitle clearfix" target="_blank">
+        <a href="#" class="navTitle clearfix" target="_blank">
             <span class="icon icon-3"></span>
             <span class="name">{{item.title}}
                 <span class="tag tag-new"><!-- tag样式类 是否最新、最热等 --></span>
@@ -19,7 +19,7 @@
                 </h4>
                 <ul class="cardContent" ms-each-i="item.data">
                     <li>
-                        <a href="{$child.url}" >{{i}}</a>
+                        <a href="#" >{{i}}</a>
                     </li>
                 </ul>
             </div>
@@ -30,6 +30,21 @@
   avalon.ready(function (argument) {
     avalon.define("category_tree",function(vm){
       vm.datas=[{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
           title:"数码电子",
           data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
         }
