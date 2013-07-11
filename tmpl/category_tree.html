@@ -36,12 +36,21 @@
       ]
     });
     avalon.scan();
-  })
-  console.log("??");
+    var shopNav = setInterval(function(){
+      if ($.fn.shopNav) {//wite shopNav.js is loaded
+
+        //+RUN plugins
+        $("#category_tree").shopNav({
+          keepTop:1,
+          animateTime:120
+        });
+        //-RUN plugins
+
+        clearInterval(shopNav);
+        return ;
+      }
+      console.log("wite...")
+    },36);
+  });
 </script>
-<script type="text/javascript">
-$("#category_tree").shopNav({
-  keepTop:1,
-  animateTime:120
-});
-</script>
+

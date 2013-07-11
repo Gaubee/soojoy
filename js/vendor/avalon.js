@@ -1,5 +1,5 @@
 //==================================================
-// avalon 0.83 独立版  by 司徒正美 2013.6.28
+// avalon 0.84 独立版  by 司徒正美 2013.6.28
 // 疑问:
 //    什么协议? MIT, (五种开源协议的比较(BSD,Apache,GPL,LGPL,MIThttp://www.awflasher.com/blog/archives/939)
 //    依赖情况? 没有任何依赖，可自由搭配jQuery, mass等使用,并不会引发冲突问题
@@ -583,10 +583,10 @@
                 }
                 //2. 转化为完整路径
                 if (kernel.alias[url]) { //别名机制
-                    ret = kernel.alias[url]
-                    if (typeof ret === "object") {
-                        shim = ret
-                        ret = ret.src
+                    url = kernel.alias[url]
+                    if (typeof url === "object") {
+                        shim = url
+                        url = url.src
                     }
                 }
                 //3.  处理text!  css! 等资源
@@ -1953,6 +1953,28 @@
         "class": "className",
         "for": "htmlFor"
     }
+    var setInnerHTML = function(el, htmlCode) {
+        var ua = navigator.userAgent.toLowerCase();
+        if (!W3C) {//IE
+            htmlCode = htmlCode.replace(/<script([^>]*)>/gi, '<script$1 defer>');
+            el.innerHTML = htmlCode;
+        } else {
+            el.innerHTML = htmlCode;
+            var catchDOM = DOC.createElement("a");
+            catchDOM.innerHTML = htmlCode;
+            var scripts = catchDOM.getElementsByTagName("script");
+            for(var i = 0,item,src;item = scripts[i];i+=1){
+                if (src = item.src) {
+                    item = DOC.createElement("script");
+                    item.src = src;
+                    // item.defer = true;//no need ,unusefully
+                    DOC.body.appendChild(item);
+                }else{
+                    eval(item.innerText);
+                }
+            }
+        }
+    }
     var bindingHandlers = avalon.bindingHandlers = {
         "if": function(data, vmodels) {
             var placehoder = DOC.createComment("@")
@@ -2062,8 +2084,8 @@
                         ajax.onreadystatechange = function() {
                             if (ajax.readyState == 4) {
                                 var s = ajax.status
-                                if (s >= 200 && s < 300 || s === 304 || s === 1223) {
-                                    elem.innerHTML = ajax.responseText
+                                if (s >= 200 && s < 300 || s === 304 || s === 1223 || s === 0) {//0 for node-webkit
+                                    setInnerHTML(elem,ajax.responseText)
                                     avalon.scan(elem, vmodels)
                                 }
                             }
@@ -2073,7 +2095,7 @@
                     } else {
                         var el = DOC.getElementById(val)
                         avalon.nextTick(function() {
-                            elem.innerHTML = el && el.innerHTML;
+                            setInnerHTML(elem,el.innerHTML)
                             avalon.scan(elem, vmodels)
                         })
                     }
@@ -2148,7 +2170,7 @@
             watchView(data.value, vmodels, data, function(val, elem) {
                 val = val == null ? "" : val + ""
                 if (data.replaceNodes) {
-                    domParser.innerHTML = val
+                    setInnerHTML(domParser,val)
                     var replaceNodes = []
                     while (domParser.firstChild) {
                         replaceNodes.push(domParser.firstChild)
@@ -2160,7 +2182,7 @@
                     }
                     data.replaceNodes = replaceNodes
                 } else {
-                    elem.innerHTML = val
+                    setInnerHTML(elem,val)
                 }
             })
         },
@@ -2730,10 +2752,10 @@
         },
         number: function(number, decimals, dec_point, thousands_sep) {
             //与PHP的number_format完全兼容
-            //number	必需，要格式化的数字
-            //decimals	可选，规定多少个小数位。
-            //dec_point	可选，规定用作小数点的字符串（默认为 . ）。
-            //thousands_sep	可选，规定用作千位分隔符的字符串（默认为 , ），如果设置了该参数，那么所有其他参数都是必需的。
+            //number    必需，要格式化的数字
+            //decimals  可选，规定多少个小数位。
+            //dec_point 可选，规定用作小数点的字符串（默认为 . ）。
+            //thousands_sep 可选，规定用作千位分隔符的字符串（默认为 , ），如果设置了该参数，那么所有其他参数都是必需的。
             // http://kevin.vanzonneveld.net
             number = (number + "").replace(/[^0-9+\-Ee.]/g, '')
             var n = !isFinite(+number) ? 0 : +number,
