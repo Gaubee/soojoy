@@ -1,285 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Soojoy</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        
-        <link rel="stylesheet" href="css/pure/base.css">
-
-        <link rel="stylesheet" href="style.css">
-
-        <link rel="stylesheet/less" href="less/main.less">
-        <link rel="stylesheet/less" href="less/head-nav.less">
-        <link rel="stylesheet/less" href="less/show.less">
-        <link rel="stylesheet/less" href="less/recommend.less">
-        <link rel="stylesheet/less" href="less/sort.less">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Soojoy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    </head>
-    <body ms-controller="soojoy">
-        <div id="head-nav" ms-include-src="'tmpl/head-nav.html'"></div>
+    <link rel="stylesheet" href="css/pure/base.css">
 
-        <div class="body" id="show">
-            <div class="left-small all-height" ms-include-src="'tmpl/category_tree.html'">
-            </div>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body ms-controller="soojoy">
+    <div id="head-nav" ms-include-src="'tmpl/head-nav.html'"></div>
+
+    <div class="body" id="show">
+        <div class="left-small all-height" ms-include-src="'tmpl/category_tree.html'">
         </div>
-        <!-- head -->
-        <div class="body" id="recommend">
-            <div class="recommend">
-                <div class="title clearfix">
-                    <span class="ribbon"></span><span class="name left-small">今日抢购</span>
-                    <span class="more right">查看更多</span>
-                </div>
-                <div class="content">
-                    <ul class="commodity-list clearfix">
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="recommend">
-                <div class="title clearfix">
-                    <span class="ribbon"></span><span class="name left-small">热门推荐</span>
-                    <span class="more right">查看更多</span>
-                </div>
-                <div class="content">
-                    <ul class="commodity-list clearfix">
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                        <li class="item">
-                            <img src="">
-                            <span class="price">￥0.01元</span>
-                            <span class="name">P806</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="body sort">
-            <div class="ranking left-normal clearfix">
-                <div class="title">
-                    <h3>热销榜</h3>
-                </div>
-                <div class="content">
-                    <ul class="commodity-list clearfix">
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="title">
-                数码电子
-                <span class="more right">查看更多</span>
-            </div>
-            <div class="commodity content">
-                <ul class="commodity-list clearfix">
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="body sort">
-            <div class="ranking left-normal clearfix">
-                <div class="title">
-                    <h3>热销榜</h3>
-                </div>
-                <div class="content">
-                    <ul class="commodity-list clearfix">
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <b class="num">1</b>
-                            <img src="">
-                            <div class="info">
-                                <span class="price clearfix">￥0.01元</span>
-                                <span class="name">P806</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="title">
-                礼品精品
-                <span class="more right">查看更多</span>
-            </div>
-            <div class="commodity content">
-                <ul class="commodity-list clearfix">
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                    <li class="item">
-                        <img src="">
-                        <span class="price">￥0.01元</span>
-                        <span class="name">P806</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="page_footer" class="body" ms-include-src="'tmpl/page_footer.html'">
-        </div>
-
-        <script src="js/vendor/jquery-1.10.1.min.js"></script>
-
-        <script src="js/plugins.js"></script>
+        <h2>Gaubee</h2>
+    </div>
 
 
-        <script src="js/vendor/less-1.3.3.min.js" type="text/javascript"></script>
+    <div id="page_footer" class="body" ms-include-src="'tmpl/page_footer.html'">
+    </div>
 
-        <script src="js/vendor/avalon.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/goods.js"></script>
-    </body>
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+
+    <!--[if !IE]><!--><script src="js/vendor/less-1.3.3.min.js" type="text/javascript"></script><!--<![endif]-->
+
+
+    <script src="js/vendor/avalon.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/goods.js"></script>
+
+</body>
 </html>
+

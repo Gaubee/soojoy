@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+		.main{
+			width: 960px;
+			height:300px;
+			margin: 0px auto;
+		}
+		div{
+			/*background-color: #d94a4a;*/
+		}
+		.img{
+			background-color: #932626;
+		}
+	</style>
+	
+	<script src="http://raw.github.com/RubyLouvre/avalon/master/avalon.js"></script>
+    <script>window.avalon || document.write('<script src="js/vendor/avalon.js"><\/script>');</script>
+
+	<script type="text/javascript">
+	avalon.ready(function (argument) {
+		avalon.define("app",function(vm){
+			vm.datas = [
+				{
+					title:"XXXXX",
+					price:"￥200元"
+				},
+				{
+					title:"XXXXX1",
+					price:"￥300元"
+				},
+				{
+					title:"XXXXX2",
+					price:"￥400元"
+				},
+				{
+					title:"XXXXX3",
+					price:"￥500元"
+				}
+			]
+		});
+		avalon.scan();
+	});
+	</script>
+</head>
+<body>
+	<div class="main" ms-controller="app">
+		<div style="width:100%;height:100%;border:1px solid #eeeeee;" ms-each-commodity="datas">
+			<div style="width:240px;border-left:1px solid #eeeeee;margin-left:-1px;height:100%;float:left;">
+				<div class="img" style="width:90%;height:186px;margin:14px auto;"></div>
+				<div class="detial">
+					<h4 style="margin:0px;padding:0px;text-align:center;color:#666;font-family:'Microsoft Yahei',simsun;font-size:18px;">{{commodity.title}}</h4>
+					<p style="color:#d94a4a;text-align:center;padding:4px;margin:0px">{{commodity.price}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

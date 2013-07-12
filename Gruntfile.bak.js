@@ -1,23 +1,13 @@
-module.exports = function (grunt) {
-  'use strict';
+module.exports = function(grunt) {
 
-  //load all grunt tasks
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('connect-livereload');
-
-  //define tasks
-  grunt.registerTask('server', ['connect:server',  'watch']);
-
-  //grunt config
+  // Project configuration.
   grunt.initConfig({
-    //======== 配置相关 ========
     pkg: grunt.file.readJSON('package.json'),
-    src: '',
-
-    //======== 开发相关 ========
-    //开启服务
+    // open: {
+    //   server: {
+    //     url: 'http://localhost:<%= connect.options.port %>'
+    //   }
+    // },
     connect: {
       options: {
         port: 9000,
@@ -29,8 +19,10 @@ module.exports = function (grunt) {
             require('connect-livereload')({
               port: Number('<%= watch.options.livereload %>')
             }),
+
             // Serve static files.
             connect.static(options.base),
+
             // Make empty directories browsable.
             // connect.directory(options.base),
           ];
@@ -38,19 +30,11 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          // keepalive: true,
-          base: '<%= src %>',
+          keepalive: true,
+          base: '',
         }
       }
     },
-
-    //打开浏览器
-    open: {
-      server: {
-        url: 'http://localhost:<%= connect.options.port %>'
-      }
-    },
-
     less: {
       development: {
         options: {
@@ -85,7 +69,16 @@ module.exports = function (grunt) {
         files:["*.html","tmpl/*.html"]
       }
     }
-
-
   });
+
+
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('connect-livereload');
+
+  // Default task(s).
+  grunt.registerTask('default', ['less','watch','connect']);
+  grunt.registerTask('server', ['connect:server', 'watch:server']);
+
 };
