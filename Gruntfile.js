@@ -82,7 +82,7 @@ module.exports = function (grunt) {
         files:["js/*.js"]
       },
       html: {
-        files:["*.html","tmpl/*.html"]
+        files:["*.html","tmpl/*.html","tmpl/*.lbi"]
       }
     }
 

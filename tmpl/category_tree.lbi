@@ -1,0 +1,71 @@
+
+<script type="text/javascript" src="js/jquery.plugins/jquery.shopNav.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.plugins/jquery.shopNav.css">
+<link rel="stylesheet" type="text/css" href="css/show.css">
+
+<ul ms-controller="category_tree" id="category_tree" class="shopNav left-small" ms-each-item="datas">
+    <li class="navItem">
+        <a href="#" class="navTitle clearfix" target="_blank">
+            <span class="icon icon-3"></span>
+            <span class="name">{{item.title}}
+                <span class="tag tag-new"><!-- tag样式类 是否最新、最热等 --></span>
+            </span>
+            <span class="after">&gt;</span>
+        </a>
+        <div class="navContent">
+            <div class="card">
+                <h4 class="cardTitle">
+                    <a href="/store/goods/2/128/">推荐商品</a>
+                </h4>
+                <ul class="cardContent" ms-each-i="item.data">
+                    <li>
+                        <a href="#" >{{i}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>
+<script type="text/javascript">
+  avalon.ready(function (argument) {
+    avalon.define("category_tree",function(vm){
+      vm.datas=[{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        },{
+          title:"数码电子",
+          data:["U盘", "鼠标", "键盘", "音箱", "移动硬盘", "摄像头", "电脑清洁"]
+        }
+      ]
+    });
+    avalon.scan();
+    var shopNav = setInterval(function(){
+      if ($.fn.shopNav) {//wite shopNav.js is loaded
+
+        //+RUN plugins
+        $("#category_tree").shopNav({
+          keepTop:1,
+          animateTime:120
+        });
+        //-RUN plugins
+
+        clearInterval(shopNav);
+        return ;
+      }
+      console.log("wite...")
+    },36);
+  });
+</script>
+

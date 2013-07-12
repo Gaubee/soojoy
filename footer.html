@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Soojoy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="pink.css" />
+</head>
+<body ms-controller="soojoy">
+
+
+    <div style="width:100%;background:#d94a4a;">
+        <style type="text/css">
+            #page_footer a{
+                color: #DDD;
+                text-decoration: none;
+                font-size: 12px;
+            }
+            #page_footer a:hover{
+                color: #FFF;
+                text-decoration: underline;
+            }
+            #page_footer p{
+                color: #DDD;
+            }
+        </style>
+        <div class="clearfix" id="page_footer" style="width:960px;margin:0px auto;padding:20px 0px;">
+            <!--友情链接 start-->
+            <!--{if $img_links  or $txt_links }-->
+            <div id="bottomNav" >
+                <ul class="clearfix" style="margin:10px 0 30px 0;" ms-each-link="img_links">
+                    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+                    <li style="width:238px;float:left;text-align:center;" style="float:left;"><a href="{$link.url}" target="_blank" title="{$link.name}">
+                        <img style="height:48px;background:#FFF" src="{$link.logo}" alt="{$link.name}" border="0" />
+                    </a></li>
+                    <!--结束图片类型的友情链接{/foreach}-->
+                </ul>
+                <!-- {if $txt_links} -->
+                <ul ms-each-link="txt_links">
+                    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+                    <li style="color:#EEE">
+                        [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+                    </li>
+                    <!--结束文字类型的友情链接{/foreach}-->
+                </ul>
+                <!-- {/if} -->
+            </div>
+            <!--{/if}-->
+            <!--友情链接 end-->
+
+            
+            <div  style="width:50%;margin:0px;float:left;" ms-include-src="'tmpl/help.html'">
+                <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+            </div>
+            <div style="float:left;width:50%;">
+                <img style="width:100%" src="img/logo.png">
+                <p>xxxxx</p>
+                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            </div>
+            
+            <div ms-include-src="'tmpl/page_footer.html'"> 
+                <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+<script src="js/vendor/avalon.js"></script>
+<script src="js/main.js"></script>

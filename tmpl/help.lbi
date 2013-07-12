@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{if $helps}-->
+<div id="help" ms-controller="helps" ms-each-help_cat="helps">
+  <!-- {foreach from=$helps item=help_cat} -->
+  <dl style="float:left;width:40%;margin:0px 0px 20px 0px;">
+    <dt><a style="color: #FFF; font-size: 18px;padding:8px 0px;display:block;" href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a></dt>
+    <span ms-each-item="help_cat.article">
+      <!-- {foreach from=$help_cat.article item=item} -->
+      <dd><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
+      <!-- {/foreach} -->
+    </span>
+  </dl>
+  <!-- {/foreach} -->
+</div>
+<!--{/if}-->
+
+
+<script type="text/javascript">
+  console.log("????");
+  avalon.ready(function (argument) {
+    avalon.define("helps",function(vm){
+      vm.helps = [
+        // {cat_name:"新手上路",article:[
+        // {short_title:"售后流程"},
+        // {short_title:"购物流程"},
+        // {short_title:"订购方式"}
+        // ]}
+        // ,{cat_name:"手机常识",article:[
+        // {short_title:"如何分辨原装电池"},
+        // {short_title:"如何分辨水货手机"},
+        // {short_title:"如何享受全国联保"}
+        // ]},
+        {cat_name:"配送与支付",article:[
+        {short_title:"货到付款区域"},
+        {short_title:"配送支付智能查询"},
+        {short_title:"支付方式说明"}
+        ]}
+        ,{cat_name:"会员中心",article:[
+        {short_title:"资金管理"},
+        {short_title:"我的收藏"},
+        {short_title:"我的订单"}
+        ]}
+        ,{cat_name:"服务保证",article:[
+        {short_title:"退换货原则"},
+        {short_title:"售后服务保证"},
+        {short_title:"产品质量保证"}
+        ]}
+        ,{cat_name:"联系我们",article:[
+        {short_title:"网站故障报告"},
+        {short_title:"选机咨询"},
+        {short_title:"投诉与建议"}
+        ]}
+
+      ]
+    });
+  })
+</script>
